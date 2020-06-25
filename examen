@@ -1,0 +1,83 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package libro_fisicaapp;
+
+/**
+ *
+ * @author Erick Unda
+ */
+class Libro_Fisica{
+
+        private int codigo;
+        private String titulo;
+        private String autor;
+        private int anio_edicion;
+        
+        public Libro_Fisica(int pCodigo, String pTitulo, String pAutor, int pAnio_edicion){
+            
+        codigo=pCodigo;
+        titulo=pTitulo;
+        autor=pAutor;
+        anio_edicion=pAnio_edicion;
+            
+        }
+        public int getCodigo(){
+            return codigo;
+        }
+        public void setCodigo(int codigo){
+            this.codigo=codigo;
+        }
+    
+        public String getTitulo(){
+            return titulo;
+        }
+        public void setTitulo(String titulo){
+            this.titulo = titulo;
+        }
+        
+        public String getAutor(){
+        return autor;
+        }
+        public void setAutor(String autor){
+            this.autor = autor;
+        }
+        
+        public int getAnio_edicion(){
+        return anio_edicion;
+        }
+        public void setAnio_edicion(int anio_edicion){
+            this.anio_edicion=anio_edicion;
+        }
+        @Override
+        public String toString () {
+        return " El Libro de Fisica "+ titulo + " Con Codigo " +codigo+ "--"
+             + " Escrito por " + autor +  " Tiene la fecha de "+ anio_edicion + " anio ";
+                }       
+}
+public class Libro_Fisicaapp {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Libro_Fisica lb1=new Libro_Fisica(1, "Fundamentos de fisica", "Isacc Newton", 2008);
+        Libro_Fisica lb2=new Libro_Fisica(2, "Fundamentos de fisica", "Albert Einstein", 2012);
+        
+         System.out.println(lb1.toString());
+         System.out.println(lb2.toString());
+         
+         lb1.setAnio_edicion(2020);
+         
+         if(lb1.getAnio_edicion()<lb2.getAnio_edicion()){
+             System.out.println(lb1.getAutor()+" tiene mas años");
+         }else{
+        System.out.println(lb2.getAutor()+" tiene mas años");
+    }
+         
+    }
+    
+}
